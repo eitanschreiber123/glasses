@@ -7,6 +7,6 @@ export const metadata = {title: 'Optical Express',description: 'Lentes'}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"><body className={inter.className}>{children}</body></html>
+    <html lang="en" translate="no"><body className={inter.className}>{children}</body></html>
   )
 }

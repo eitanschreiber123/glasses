@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../page.module.css'
@@ -11,6 +12,9 @@ export default function Home({params}) {
   const c = d.filter(d => d.i == params.category)[0]
   return (
     <main className={styles.main}>
+      <Head>
+        <meta name="google" content="notranslate"/>
+      </Head>
     <header style={{display:`flex`,width:`95%`,justifyContent:`space-between`}}>
       <div style={{display:`flex`}}>
         <svg onClick={() => router.back()} fill="#8f4ff8" viewBox="0 0 28 25" width="30px" height="30px"><path d="M 10 4.9296875 L 2.9296875 12 L 10 19.070312 L 11.5 17.570312 L 6.9296875 13 L 21 13 L 21 11 L 6.9296875 11 L 11.5 6.4296875 L 10 4.9296875 z" fill="#8f4ff8"></path></svg>

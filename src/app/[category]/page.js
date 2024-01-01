@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../page.module.css'
 import Link from 'next/link'
@@ -11,6 +12,9 @@ export default function Home({params}) {
   const c = d.filter(d => d.i == params.category)[0]
   return (
     <main className={styles.main}>
+      <Head>
+        <meta name="google" content="notranslate"/>
+      </Head>
       <header style={{width:`100%`,display:'flex',flexDirection:'column',alignItems:`center`}}>
         <div style={{display:`flex`,width:`95%`,justifyContent:`space-between`}}>
           <div style={{display:`flex`}}>
