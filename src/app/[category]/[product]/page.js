@@ -29,7 +29,7 @@ export default function Home({params}) {
         <div>
           <h2>{c.n} {params.product}</h2>
           <p>26$</p>
-          <Link target="_blank" href={`https://wa.me/593969607475?text=me%20interesa%20${c.n}%20${params.product}%20`}>Contacto</Link>
+          <Link target="_blank" href={`https://wa.me/593969607475?text=me%20interesa%20${c.n}%20${params.product}%20https://glasses-2.vercel.app/${c.i}/${params.product}`}>Contacto</Link>
         </div>
       </section>
       <section>
