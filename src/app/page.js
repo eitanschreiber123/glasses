@@ -44,7 +44,7 @@ export default function Home() {
         <h2>Teléfono</h2>
         <p style={{textDecoration:`underline`}}>+593969607475</p>
         <h2>Dirección</h2>
-        <p style={{textDecoration:`underline`}}>vopticalexpress1991@outlook.com</p>
+        <p style={{textDecoration:`underline`}}>opticalexpress1991@outlook.com</p>
       </section>
     </main>
   )
