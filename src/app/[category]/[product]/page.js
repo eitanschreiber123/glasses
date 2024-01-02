@@ -19,7 +19,7 @@ export default function Home({params}) {
     <header style={{display:`flex`,width:`95%`,justifyContent:`space-between`}}>
       <div style={{display:`flex`}}>
         <svg onClick={() => router.back()} fill="#8f4ff8" viewBox="0 0 28 25" width="30px" height="30px"><path d="M 10 4.9296875 L 2.9296875 12 L 10 19.070312 L 11.5 17.570312 L 6.9296875 13 L 21 13 L 21 11 L 6.9296875 11 L 11.5 6.4296875 L 10 4.9296875 z" fill="#8f4ff8"></path></svg>
-        <Image src="/logo.jpeg"height="200"width="200"/>
+        <Image src="/logo.jpeg"height="250"width="250"/>
         <h2>Optical Express</h2>
       </div>
       <svg fill="#8f4ff8" viewBox="0 0 25 25" width="28" height="28"><path fill="#8f4ff8" d="M 12 3 A 4 4 0 0 0 8 7 A 4 4 0 0 0 12 11 A 4 4 0 0 0 16 7 A 4 4 0 0 0 12 3 z M 12 14 C 8.996 14 3 15.508 3 18.5 L 3 20 C 3 20.552 3.448 21 4 21 L 20 21 C 20.552 21 21 20.552 21 20 L 21 18.5 C 21 15.508 15.004 14 12 14 z"></path></svg>
