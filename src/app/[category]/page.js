@@ -5,7 +5,7 @@ import styles from '../page.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-const d=[{n:'Emporio Armani',i:'armani',l:2},{n:'Kenneth cole',i:'kenneth',l:1},{n:'Joe',i:'joe',l:3},{n:'Snowberry',i:'snowberry',l:8},{n:'Polaroid',i:'polaroid',l:9},{n:'Converse',i:'converse',l:9},{n:'Gap',i:'gap',l:4},{n:'Gant',i:'gant',l:4},{n:'Ray ban',i:'ray',l:4},{n:'Skechers',i:'skechers',l:5},{n:'Boss',i:'boss',l:8},{n:'Pepe jeans',i:'pepe',l:37},{n:'Timberland',i:'timberland',l:5},{n:'Banana republic',i:'banana',l:2},{n:'CK',i:'ck',l:3},{n:'Lacoste',i:'lacoste',l:8},{n:'Nike',i:'nike',l:10},{n:'Guess',i:'guess',l:20},{n:'Prada',i:'prada',l:4},{n:'Nautica',i:'nautica',l:3},{n:'Oakley',i:'oakley',l:2},{n:'OP',i:'op',l:8},{n:'Hombres',i:'hombre',l:36},{n:'Mujeres',i:'mujer',l:110},{n:'Niños',i:'nino',l:10},{n:'Titanium',i:'titanium',l:40},{n:'Acetato',i:'acetato',l:10},{n:'Metal',i:'metal',l:40}]
+const d=[{n:'Emporio Armani',i:'armani',l:2,p:112.99},{n:'Kenneth cole',i:'kenneth',l:1,p:76.49},{n:'Joe',i:'joe',l:3,p:76.99},{n:'Snowberry',i:'snowberry',l:8,p:73.80},{n:'Polaroid',i:'polaroid',l:9,p:79.45},{n:'Converse',i:'converse',l:9,p:83.29},{n:'Gap',i:'gap',l:4,p:94},{n:'Gant',i:'gant',l:4,p:76.49},{n:'Ray ban',i:'ray',l:4,p:119},{n:'Skechers',i:'skechers',l:5,p:76.49},{n:'Boss',i:'boss',l:8,p:108.60},{n:'Pepe jeans',i:'pepe',l:37,p:81.24},{n:'Timberland',i:'timberland',l:5,p:79.80},{n:'Banana republic',i:'banana',l:2},{n:'CK',i:'ck',l:3},{n:'Lacoste',i:'lacoste',l:8},{n:'Nike',i:'nike',l:10},{n:'Guess',i:'guess',l:20},{n:'Prada',i:'prada',l:4},{n:'Nautica',i:'nautica',l:3},{n:'Oakley',i:'oakley',l:2},{n:'OP',i:'op',l:8},{n:'Hombres',i:'hombre',l:36},{n:'Mujeres',i:'mujer',l:110},{n:'Niños',i:'nino',l:10},{n:'Titanium',i:'titanium',l:40},{n:'Acetato',i:'acetato',l:10},{n:'Metal',i:'metal',l:40}]
 
 export default function Home({params}) {
   const router = useRouter()
@@ -35,7 +35,7 @@ export default function Home({params}) {
       {Array.from({length:c.l}, (_, v) => v).map((i, ind) => <Link href={`/${c.i}/${ind+1}`} style={{display:`flex`,flexDirection:`column`,width:'319px',border:'1px solid rgb(226, 223, 218)',boxShadow:'rgba(125, 125, 125, 0.2) 0px 0px 5px',borderRadius:`10px`,margin:`10px`,alignItems:`center`}}>
         <Image src={`/${c.i}/${ind+1}_.png`}height="321"width="319" style={{borderTopLeftRadius:`10px`,borderTopRightRadius:`10px`}}/>
         <h2>{c.n} {ind+1}</h2>
-        <p>26$</p>
+        {c.p ? <p>{c.p}$</p> : <p>no se</p>}
         </Link>)}
       </section>
       <section style={{display:'flex',flexDirection:'column',width:`100%`,alignItems:`flex-start`}}>
