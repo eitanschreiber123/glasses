@@ -5,3 +5,11 @@
   min-height: 100vh;
   width: 100vw;
 }
+.bottom {
+  flex-direction:row;
+}
+@media (max-width: 830px) {
+  .bottom {
+    flex-direction:column;
+  }
+}
