@@ -6,7 +6,7 @@ import Link from 'next/link'
 import styles from '../../page.module.css'
 import { useRouter } from 'next/navigation'
 
-const d=[{n:'Emporio Armani',i:'armani',l:2,p:112.99},{n:'Kenneth cole',i:'kenneth',l:1,p:76.49},{n:'Joe',i:'joe',l:3,p:76.99},{n:'Snowberry',i:'snowberry',l:8,p:73.80},{n:'Polaroid',i:'polaroid',l:9,p:79.45},{n:'Converse',i:'converse',l:9,p:83.29},{n:'Gap',i:'gap',l:4,p:94},{n:'Gant',i:'gant',l:4,p:76.49},{n:'Ray ban',i:'ray',l:4,p:119},{n:'Skechers',i:'skechers',l:5,p:76.49},{n:'Boss',i:'boss',l:8,p:108.60},{n:'Pepe jeans',i:'pepe',l:37,p:81.24},{n:'Timberland',i:'timberland',l:5,p:79.80},{n:'Banana republic',i:'banana',l:2,p:78.56},{n:'CK',i:'ck',l:3,p:95.58},{n:'Lacoste',i:'lacoste',l:8,p:115.62},{n:'Nike',i:'nike',l:10,p:112.23},{n:'Guess',i:'guess',l:20,p:93.25},{n:'Prada',i:'prada',l:4},{n:'Nautica',i:'nautica',l:3,p:99.99},{n:'Oakley',i:'oakley',l:2,p:142.00},{n:'OP',i:'op',l:8,p:77.29},{n:'Hombres',i:'hombre',l:36,p:26},{n:'Mujeres',i:'mujer',l:110},{n:'Niños',i:'nino',l:10},{n:'Titanium',i:'titanium',l:40},{n:'Acetato',i:'acetato',l:10},{n:'Metal',i:'metal',l:40}]
+const d=[{n:'Emporio Armani',i:'armani',l:2,p:112.99},{n:'Kenneth cole',i:'kenneth',l:1,p:76.49},{n:'Joe',i:'joe',l:3,p:76.99},{n:'Snowberry',i:'snowberry',l:8,p:73.80},{n:'Polaroid',i:'polaroid',l:9,p:79.45},{n:'Converse',i:'converse',l:9,p:83.29},{n:'Gap',i:'gap',l:4,p:94},{n:'Gant',i:'gant',l:4,p:76.49},{n:'Ray ban',i:'ray',l:4,p:119},{n:'Skechers',i:'skechers',l:5,p:76.49},{n:'Boss',i:'boss',l:8,p:108.60},{n:'Pepe jeans',i:'pepe',l:37,p:81.24},{n:'Timberland',i:'timberland',l:5,p:79.80},{n:'Banana republic',i:'banana',l:2,p:78.56},{n:'CK',i:'ck',l:3,p:95.58},{n:'Lacoste',i:'lacoste',l:8,p:115.62},{n:'Nike',i:'nike',l:10,p:112.23},{n:'Guess',i:'guess',l:20,p:93.25},{n:'Prada',i:'prada',l:4},{n:'Nautica',i:'nautica',l:3,p:99.99},{n:'Oakley',i:'oakley',l:2,p:142.00},{n:'OP',i:'op',l:8,p:77.29},{n:'Hombres',i:'hombre',l:36,p:26},{n:'Mujeres',i:'mujer',l:110,p:26},{n:'Niños',i:'nino',l:10,p:26},{n:'Titanium',i:'titanium',l:40,p:26},{n:'Acetato',i:'acetato',l:10,p:26},{n:'Metal',i:'metal',l:40,p:26}]
 
 export default function Home({params}) {
   const router = useRouter()
@@ -56,20 +56,18 @@ export default function Home({params}) {
         <Image src={`/${params.category}/${params.product}_.png`}style={{height:`auto`,width:`50vw`,marginRight:`50px`}}/>
         <div>
           <h2>{c.n} {params.product}</h2>
-          {c.n !== 'Prada' && <p>{c.p ? `$${c.p}` : `no se`}</p>}
-          {c.n == 'Prada' && <p>{params.product == 1 ? `180$` : `160$`}</p>}
+          {c.n !== 'Prada' ? <p>${c.p}</p> : <p>{params.product == 1 ? `180$` : `160$`}</p>}
           <Link target="_blank" href={`https://wa.me/593969607475?text=me%20interesa%20${c.n}%20${params.product}%20https://glasses-2.vercel.app/${c.i}/${params.product}`}>Contacto</Link>
         </div>
       </section>
       <section>
         <h2>Mas productos</h2>
         <div style={{display:`flex`,overflowX:`scroll`,width:`100vw`}}>
-          {Array.from({length:c.l}, (_, v) => v+1).map(i => i !=params.product ? <div style={{display:`flex`,flexDirection:`column`,width:'319px',border:'1px solid rgb(226, 223, 218)',boxShadow:'rgba(125, 125, 125, 0.2) 0px 0px 5px',borderRadius:`10px`,margin:`10px`,alignItems:`center`}}>
+          {Array.from({length:c.l}, (_, v) => v+1).map(i => i !=params.product ? <Link href={`/${params.category}/${i}`} style={{display:`flex`,flexDirection:`column`,width:'319px',border:'1px solid rgb(226, 223, 218)',boxShadow:'rgba(125, 125, 125, 0.2) 0px 0px 5px',borderRadius:`10px`,margin:`10px`,alignItems:`center`}}>
             <Image src={`/${params.category}/${i}_.png`}height="321"width="319" style={{borderTopLeftRadius:`10px`,borderTopRightRadius:`10px`}}/>
             <h2>{c.n} {i}</h2>
-            {c.n !== 'Prada' && <p>{c.p ? `$${c.p}` : `no se`}</p>}
-            {c.n == 'Prada' && <p>{i == 1 ? `180$` : `160$`}</p>}
-            </div> : null)}
+            {c.n !== 'Prada' ? <p>${c.p}</p> : <p>{i == 1 ? `180$` : `160$`}</p>}
+            </Link> : null)}
         </div>
       </section>
       <section style={{display:'flex',flexDirection:'column',width:`100%`,alignItems:`center`}}>
